@@ -1,0 +1,60 @@
+Leer:
+https://vscodecandothat.com/
+
+Versi�n y otra info MySQL:
+status;
+
+Bases de Datos:
+create database [NOMBRE];
+use [NOMBRE];
+show databases;
+drop database [NOMBRE];
+
+Tablas:
+create table [NOMBRE];
+show tables;
+desc [NOMBRE];
+drop table [NOMBRE];
+ALTER TABLE [NOMBRE TABLA ORIGINAL] RENAME TO [NOMBRE TABLA NUEVO]
+ALTER TABLE [NOMBRE TABLA] CHANGE [NOMBRE CAMPO ORIGINAL] [NOMBRE CAMPO NUEVO] varchar(100) null;
+ALTER TABLE [NOMBRE TABLA] MODIFY [NOMBRE CAMPO] char(50) not null;
+ALTER TABLE [NOMBRE TABLA] ADD [NOMBRE NUEVO CAMPO] varchar(100) null;
+ALTER TABLE [NOMBRE TABLA] ADD CONSTRAINT uq_[NOMBRE INDICE UNIQUE] UNIQUE([NOMBRE CAMPO ÚNICO]);
+ALTER TABLE [NOMBRE TABLA] DROP [NOMBRE CAMPO];
+
+Manejo de Registros:
+INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`) VALUES ('1', 'Pepe', 'Trueno', 'pepe@pepetrueno.com', 'miclave');
+INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`) VALUES ('2', 'Juan', 'Bimba', 'juan@bimba.com', 'suclave');
+SELECT * from [TABLA];
+
+PhpmyAdmin:
+Usuario vscode
+Clave: VsCoDe#123*4
+
+Actualizar MySQL en WAMP:
+Ejecutar este comando en la carpeta donde se instal� MySQL:
+mysql_upgrade -u root -p
+
+SQLTools VSCode:
+https://vscode-sqltools.mteixeira.dev
+
+Ejecutando Queries:
+https://vscode-sqltools.mteixeira.dev/driver/executing-queries
+
+Restricciones de Integridad de Datos:
+not null = No puede estar vacío
+null = Puede estar vacío
+default 'VALOR' = Valor predeterminado
+auto_increment = El valor se incrementará automáticamente cada vez que se agregue un Registro, pero el campo debe ser una llave primaria.
+CONSTRAINT pk_[NOMBRE TABLA] PRIMARY KEY ([NOMBRE CAMPO]) = Definición de un campo como llave primaria
+CONSTRAINT fk_[NOMBRE TABLA LOCAL] FOREIGN KEY ([NOMBRE CAMPO LOCAL]) REFERENCES [NOMBRE TABLA REMOTA] ([NOMBRE CAMPO REMOTO]) = Definición de un campo como llave foránea 
+ON DELETE CASCADE = Borrar el registro si se ha borrado el campo de la llave foránea
+ON UPDATE CASCADE = Actuaizar el registro si se ha actualizado el campo de la llave foránea
+ON DELETE SET NULL = Colocar el registro en NULL si se ha borrado el campo de la llave foránea
+ON DELETE SET DEFAULT = Colocar el registro en su valor predeterminado (Default) si se ha borrado el campo de la llave foránea
+ON DELETE NO ACTION = No modificar el registro si se ha borrado el campo de la llave foránea
+ENGINE=InnoDb = Utilizar como motor a InnoDB (más rápido pero menos preciso en algunos casos)
+ENGINE=MyISAM = Utilizar como motor a MyISAM (más lento pero más preciso en algunos casos)
+
+DML = Lenguaje de Manipulación de Datos
+
